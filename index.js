@@ -47,7 +47,7 @@ const questions = [
     type: 'list',
     message: "Write your licenses (if applicable):",
     name: 'licenses',
-    choices: ['MIT', 'Apache-2.0', 'ISC', 'GPL', 'BSD']
+    choices: ['MIT', 'Apache-2.0', 'ISC', 'GPL', 'BSD', 'None']
   },
   // ask who is contributing 
   {
@@ -120,7 +120,6 @@ function init() {
 
         // sending answers to 2nd file to then get returned the generated read me file 
         const mdLayout = generateMarkdown(answer)
-        console.log(mdLayout)
 
         // send the generated MD into writeToFIle Function 
         writeToFile(fileName, mdLayout, answer.user)
