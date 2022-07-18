@@ -1,8 +1,11 @@
 // TODO: Include packages needed for this application
+
 // file system module 
 const fs = require('fs');
+
 // inquirer module 
 const inquirer = require('inquirer');
+
 // 2nd js file to generate md file 
 const generateMarkdown = require('./utils/generateMarkdown.js')
 
@@ -11,7 +14,7 @@ const questions = [
   {
     // THEN this is displayed as the title of the README 
     type: 'input',
-    message: "What's the title for your project?",
+    message: "What's the title for this project?",
     name: 'title'
   },
   {
@@ -30,13 +33,13 @@ const questions = [
   // ask how to install their project 
   {
     type: 'input',
-    message: "How to install your project?",
+    message: "How to install?",
     name: 'install'
   },
   // ask what is this project used for 
   {
     type: 'input',
-    message: "What is the usage for this project?",
+    message: "What is the usage?",
     name: 'usage'
   },
   // ask what licenses the user wants 
@@ -49,13 +52,13 @@ const questions = [
   // ask who is contributing 
   {
     type: 'input',
-    message: "Set some contribution guidelines:",
+    message: "How to make contributions?",
     name: 'contribute'
   },
   // ask to list test instructions 
   {
     type: 'input',
-    message: "List test instructions:",
+    message: "Test instructions:",
     name: 'test'
   },
   {
@@ -73,7 +76,7 @@ const questions = [
   // ask the user what they want to name the file 
   {
     type: 'input',
-    message: 'Do you want to change the file name?',
+    message: 'Keep README.md or change file name:',
     default: 'README.md',
     name: 'filename'
   }

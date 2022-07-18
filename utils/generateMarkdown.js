@@ -22,12 +22,12 @@ function generateMarkdown(data) {
   if (data.TOC) {
     tocData =
 `## Table Of Contents
-- [Usage](#Usage)
-- [Install](#Install)
-- [Contributors](#Contributors)
-- [Testing](#test-instructions)
-- [Licenses](#Licenses)
-- [Questions](#Questions)
+- [Usage](#usage)
+- [Install](#install)
+- [Contribute](#contributing)
+- [Testing](#tests)
+- [Licenses](#licenses)
+- [Questions](#questions)
     `
   }
 
@@ -50,16 +50,16 @@ ${ /* Installation */ ''}
 ${data.install}
 
 ${ /* Who Contributed? */ ''}
-## Contributors
+## Contributing
 ${data.contribute}
 
 ${ /* How To Test Product */ ''}
-## Test Instructions
+## Tests
 ${data.test}
 
 ${ /* Reach out to User via email or github */ ''}
 ## Questions
-Reach Out!\n
+_Reach Out!_\n
 ${data.user}\n
 ${data.email}
 `;
