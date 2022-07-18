@@ -1,6 +1,10 @@
 // TODO: Include packages needed for this application
+// file system module 
 const fs = require('fs');
+// inquirer module 
 const inquirer = require('inquirer');
+// 2nd js file to generate md file 
+const generateMarkdown = require('./utils/generateMarkdown.js')
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -69,7 +73,7 @@ const questions = [
   // ask the user what they want to name the file 
   {
     type: 'input',
-    message: 'Do you want to change the file name? (if empty: README.md)',
+    message: 'Do you want to change the file name?',
     default: 'README.md',
     name: 'filename'
   }
@@ -77,8 +81,12 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.appendFile(fileName, data, 'utf8', (err) => {
-    console.log('Error')
+  fs.writeFile(fileName, data, 'utf8', (err) => {
+    if (err) {
+      console.log(`oops, error: ${err}`)
+    } else {
+      console.log('ayyy, markdown created!')
+    }
   })
 }
 
@@ -88,10 +96,21 @@ function init() {
     inquirer
     .prompt(questions)
       .then((answer) => {
-        console.log(answer)
+        let fileName = answer.filename;
+        // if (JSON.stringify(fileName).includes('.md') = false) {
+        //   fileName = `${fileName}.md`
+        // } else {
+        //  return  
+        // }
+        // sending answers to 2nd file to then get returned the generated read me file 
+        const mdLayout = generateMarkdown(answer)
+        console.log(mdLayout)
+        // send the generated MD into writeToFIle Function 
+        writeToFile(fileName, mdLayout)
+
     })
     .catch((error) => {
-      console.log(`Error: ${error}`)
+      console.log(`uh oh, we have an Error... ${error}`)
       process.exit()
     }); 
 }

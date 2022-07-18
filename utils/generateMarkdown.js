@@ -14,52 +14,52 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  let tocData;
+  let tocData = '';
   if (data.TOC) {
     tocData =
-     `## Table Of Contents:
-      - [Usage](#Usage)
-      - [Install](#Install)
-      - [Contributors](#Contributors)
-      - [Testing](#test-instructions)
-      - [Licenses](#Licenses)
-      - [Questions](#Questions)
-     `
+`## Table Of Contents
+- [Usage](#Usage)
+- [Install](#Install)
+- [Contributors](#Contributors)
+- [Testing](#test-instructions)
+- [Licenses](#Licenses)
+- [Questions](#Questions)
+    `
   }
 
   return `
-  ${ /* Project Title */ ''}
-  ${data.title}
+${ /* Project Title */ ''}
+# ${data.title}
 
-  ${ /* Description */ ''} 
-  ${data.description}
+${ /* Description */ ''} 
+${data.description}
 
-  ${ /* TOC */ ''}
-  ## Table Of Contents
-  ${tocData}
+${ /* TOC */ ''}
+${tocData}
 
-  ${ /* How To Use Product */ ''}
-  ## Usage
-  ${data.usage}
+${ /* How To Use Product */ ''}
+## Usage
+${data.usage}
 
-  ${ /* Installation */ ''}
-  ## Install
-  ${data.install}
+${ /* Installation */ ''}
+## Install
+${data.install}
 
-  ${ /* Who Contributed? */ ''}
-  ## Contributors
-  ${data.contribute}
+${ /* Who Contributed? */ ''}
+## Contributors
+${data.contribute}
 
-  ${ /* How To Test Product */ ''}
-  ## Test Instructions
-  ${data.test}
+${ /* How To Test Product */ ''}
+## Test Instructions
+${data.test}
 
-  ${ /* Questions */ ''}
-  ## Questions
-  Reach Out!
-  ${data.user}
-  ${data.email}
+${ /* Reach out to User via email or github */ ''}
+## Questions
+Reach Out!\n
+${data.user}\n
+${data.email}
 `;
 }
 
+// exporting and importing to index . js 
 module.exports = generateMarkdown;
