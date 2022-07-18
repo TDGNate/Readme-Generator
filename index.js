@@ -70,6 +70,7 @@ const questions = [
   {
     type: 'input',
     message: 'Do you want to change the file name? (if empty: README.md)',
+    default: 'README.md',
     name: 'filename'
   }
 ];

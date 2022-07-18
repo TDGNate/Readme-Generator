@@ -14,21 +14,51 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-
+  let tocData;
+  if (data.TOC) {
+    tocData =
+     `## Table Of Contents:
+      - [Usage](#Usage)
+      - [Install](#Install)
+      - [Contributors](#Contributors)
+      - [Testing](#test-instructions)
+      - [Licenses](#Licenses)
+      - [Questions](#Questions)
+     `
+  }
 
   return `
-  
-  ${ /* Project Title */ ''} 
-  # ${data.title}
+  ${ /* Project Title */ ''}
+  ${data.title}
 
   ${ /* Description */ ''} 
   ${data.description}
 
+  ${ /* TOC */ ''}
+  ## Table Of Contents
+  ${tocData}
 
- ${ /* TOC */ ''} 
-  ## Table Of Contents:
+  ${ /* How To Use Product */ ''}
+  ## Usage
+  ${data.usage}
 
+  ${ /* Installation */ ''}
+  ## Install
+  ${data.install}
 
+  ${ /* Who Contributed? */ ''}
+  ## Contributors
+  ${data.contribute}
+
+  ${ /* How To Test Product */ ''}
+  ## Test Instructions
+  ${data.test}
+
+  ${ /* Questions */ ''}
+  ## Questions
+  Reach Out!
+  ${data.user}
+  ${data.email}
 `;
 }
 
