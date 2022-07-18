@@ -14,7 +14,11 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+
+  // create Table of content variable to update 
   let tocData = '';
+
+  // checks if the user wants a Table Of Contents on MD file
   if (data.TOC) {
     tocData =
 `## Table Of Contents
