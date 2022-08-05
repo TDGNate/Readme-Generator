@@ -4,7 +4,8 @@
   "description": "User can create a read me file using the command line",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "Nate",
   "license": "ISC",
