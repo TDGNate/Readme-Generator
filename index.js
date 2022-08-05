@@ -84,7 +84,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data, userName) {
-  fs.writeFile(fileName, data, 'utf8', (err) => {
+  fs.writeFile(`./dist/${fileName}`, data, 'utf8', (err) => {
     if (err) {
       console.log(`oops ${userName}, error: ${err}`)
     } else {
