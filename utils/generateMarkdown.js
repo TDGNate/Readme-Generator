@@ -89,7 +89,6 @@ const {title, description, TOC, install, usage, licenses, contribute, test, user
 - [Install](#install)
 - [Contribute](#contributing)
 - [Testing](#tests)
-- [Licenses](#licenses)
 - [Questions](#questions)
     `
   }
